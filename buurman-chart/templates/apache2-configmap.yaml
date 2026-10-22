@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Values.apache2.name }}-content
+data:
+  index.html: |
+    {{ .Values.apache2.content }}

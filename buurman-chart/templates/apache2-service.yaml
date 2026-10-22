@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Values.apache2.serviceName }}
+spec:
+  selector:
+    app: {{ .Values.apache2.name }}
+  ports:
+    - port: {{ .Values.apache2.servicePort }}
+      targetPort: 80

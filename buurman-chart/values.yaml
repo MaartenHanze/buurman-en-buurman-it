@@ -1,0 +1,28 @@
+nginx:
+  name: nginx
+  replicaCount: 2
+  image:
+    repository: nginx
+    tag: "1.27"
+    pullPolicy: IfNotPresent
+  configMapName: nginx-config
+
+apache1:
+  name: apache1
+  replicaCount: 1
+  image:
+    repository: httpd
+    tag: "2.4"
+  serviceName: apache1
+  servicePort: 80
+  content: "<html><body><h1>Apache Server 1</h1></body></html>"
+
+apache2:
+  name: apache2
+  replicaCount: 1
+  image:
+    repository: httpd
+    tag: "2.4"
+  serviceName: apache2
+  servicePort: 80
+  content: "<html><body><h1>Apache Server 2</h1></body></html>"

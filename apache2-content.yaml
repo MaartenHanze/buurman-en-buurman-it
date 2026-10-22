@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: apache2-content
+data:
+  index.html: |
+    <html><body><h1>Apache Server 2</h1></body></html>
